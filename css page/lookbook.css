@@ -1,0 +1,92 @@
+/* Lookbook Container */
+.lookbook-container {
+    padding: 100px 5% 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.lookbook-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Masonry Grid */
+.lookbook-grid {
+    column-count: 3; /* 3 columns for desktop */
+    column-gap: 20px;
+}
+
+.lookbook-item {
+    position: relative;
+    margin-bottom: 20px;
+    break-inside: avoid; /* Prevents image from splitting between columns */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.lookbook-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effect */
+.look-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.look-overlay span {
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.lookbook-item:hover img {
+    transform: scale(1.05);
+}
+
+.lookbook-item:hover .look-overlay {
+    opacity: 1;
+}
+.shop-link {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.shop-link:hover {
+    background: white;
+    color: black;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .lookbook-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .lookbook-grid {
+        column-count: 1;
+    }
+}

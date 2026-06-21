@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css page/signup.css">
+</head>
+<body>
+    <div class="allin">
+        <div>
+            <p>Name:</p>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div>
+            <p>Email:</p>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div>
+            <p>Password:</p>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <button id="btn">Submit</button>
+        <h3 id="redirect">Already have an account? Log in</h3>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD7E2rc8KG45efSi6P9oEz7Mkk74-aev_Y",
+            authDomain: "liyahstore.firebaseapp.com",
+            projectId: "liyahstore",
+            storageBucket: "liyahstore.firebasestorage.app",
+            messagingSenderId: "402346839887",
+            appId: "1:402346839887:web:f41e9cce5bbead2401ff3a"
+        };
+
+        const app  = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // "Already have an account" goes to login
+        document.getElementById('redirect').addEventListener('click', function() {
+            window.location.href = 'login.html';
+        });
+
+        document.getElementById('btn').addEventListener('click', function() {
+            var name     = document.getElementById('name').value.trim();
+            var email    = document.getElementById('email').value.trim();
+            var password = document.getElementById('password').value.trim();
+
+            if (!name || !email || !password) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(function(userCredential) {
+
+                    // Save user so the rest of the site knows they are logged in
+                    localStorage.setItem("loggedInUser", JSON.stringify({ name: name, email: email }));
+
+                    // Go back to the page they came from, or product page by default
+                    var returnTo = localStorage.getItem("returnTo");
+                    localStorage.removeItem("returnTo");
+                    window.location.href = returnTo ? returnTo : "product.html";
+
+                })
+                .catch(function(error) {
+                    alert('Signup failed: ' + error.message);
+                });
+        });
+    </script>
+</body>
+</html>

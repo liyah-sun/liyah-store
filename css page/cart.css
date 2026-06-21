@@ -1,0 +1,31 @@
+.cart-page {
+    padding: 120px 5% 80px;
+    min-height: 60vh;
+}
+
+.cart-page-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cart-page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: var(--accent-dark);
+    margin-bottom: 32px;
+}
+
+.cart-page-empty {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.cart-page-empty a {
+    color: var(--accent-pink);
+    text-decoration: none;
+}
+
+.cart-page-empty a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | Liyah Store</title>
+    <link rel="stylesheet" href="../css page/login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Welcome Back</h2>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+
+        <button id="btn">Log In</button>
+        <h3 id="redirect" style="cursor:pointer; text-align:center;">Don't have an account? Sign up</h3>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD7E2rc8KG45efSi6P9oEz7Mkk74-aev_Y",
+            authDomain: "liyahstore.firebaseapp.com",
+            projectId: "liyahstore",
+            storageBucket: "liyahstore.firebasestorage.app",
+            messagingSenderId: "402346839887",
+            appId: "1:402346839887:web:f41e9cce5bbead2401ff3a"
+        };
+
+        const app  = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Go to signup
+        document.getElementById('redirect').addEventListener('click', function() {
+            window.location.href = 'signup.html';
+        });
+
+        document.getElementById('btn').addEventListener('click', function() {
+            var email    = document.getElementById('email').value.trim();
+            var password = document.getElementById('password').value.trim();
+
+            if (!email || !password) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then(function(userCredential) {
+                    var user = userCredential.user;
+
+                    // Save logged in user to localStorage
+                    localStorage.setItem("loggedInUser", JSON.stringify({ email: user.email, uid: user.uid }));
+
+                    alert('Login successful! Welcome back.');
+
+                    // Go back to where they came from, or product page
+                    var returnTo = localStorage.getItem("returnTo");
+                    if (returnTo) {
+                        localStorage.removeItem("returnTo");
+                        window.location.href = returnTo;
+                    } else {
+                        window.location.href = "product.html";
+                    }
+                })
+                .catch(function(error) {
+                    console.log("Login error:", error.message);
+                    alert('Login failed: ' + error.message);
+                });
+        });
+    </script>
+
+</body>
+</html>

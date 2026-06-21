@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liyah Store | Modern Apparel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css page/index.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">LIYAH STORE</div>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="lookbook.html">Lookbook</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="signup.html">Signup</a></li>
+            <li>
+                <button id="cart-btn" class="cart-toggle">
+                    Cart (<span id="cart-count">0</span>)
+                </button>
+            </li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <span class="hero-subtitle">Curated Lifestyle & Apparel</span>
+        <h1 class="hero-title">Effortless Elegance for Everyday Living</h1>
+        <a href="product.html" class="hero-cta">Explore the Collection</a>
+    </div>
+</section>
+
+<!-- CATEGORIES SECTION -->
+<section id="categories" class="categories-section">
+    <div class="categories-header">
+        <p class="categories-eyebrow">Shop by Category</p>
+        <h2 class="categories-title">Find Your Style</h2>
+    </div>
+
+    <div class="categories-grid">
+        <a href="shop.html?cat=tshirts" class="cat-card cat-card--tall">
+            <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=80" alt="T-shirts & Sweats">
+            <div class="cat-card__overlay"></div>
+            <div class="cat-card__label">
+                <span class="cat-card__name">T-shirts & Sweats</span>
+                <span class="cat-card__link">Shop Now →</span>
+            </div>
+        </a>
+
+        <a href="shop.html?cat=tanktops" class="cat-card">
+            <img src="https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?auto=format&fit=crop&w=600&q=80" alt="Tank Tops">
+            <div class="cat-card__overlay"></div>
+            <div class="cat-card__label">
+                <span class="cat-card__name">Tank Tops</span>
+                <span class="cat-card__link">Shop Now →</span>
+            </div>
+        </a>
+
+        <a href="shop.html?cat=jeans" class="cat-card">
+            <img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=600&q=80" alt="Jeans">
+            <div class="cat-card__overlay"></div>
+            <div class="cat-card__label">
+                <span class="cat-card__name">Jeans</span>
+                <span class="cat-card__link">Shop Now →</span>
+            </div>
+        </a>
+
+        <a href="shop.html?cat=outerwear" class="cat-card">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&q=80" alt="Outer Wears">
+            <div class="cat-card__overlay"></div>
+            <div class="cat-card__label">
+                <span class="cat-card__name">Outer Wears</span>
+                <span class="cat-card__link">Shop Now →</span>
+            </div>
+        </a>
+
+        <a href="shop.html?cat=shirts" class="cat-card">
+            <img src="https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?auto=format&fit=crop&w=600&q=80" alt="Shirts & Blouses">
+            <div class="cat-card__overlay"></div>
+            <div class="cat-card__label">
+                <span class="cat-card__name">Shirts & Blouses</span>
+                <span class="cat-card__link">Shop Now →</span>
+            </div>
+        </a>
+
+        <a href="shop.html?cat=accessories" class="cat-card cat-card--wide">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=80" alt="Accessories">
+            <div class="cat-card__overlay"></div>
+            <div class="cat-card__label">
+                <span class="cat-card__name">Accessories</span>
+                <span class="cat-card__link">Shop Now →</span>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- BRAND STORY SECTION -->
+<section class="about-section">
+    <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80" alt="Liyah Store — curated fashion">
+    </div>
+    <div class="about-content">
+        <p class="about-eyebrow">Our Story</p>
+        <h2 class="about-title">Style That Feels Like You</h2>
+        <p class="about-body">
+            Liyah Store was born from a simple belief — that everyday dressing should feel effortless, intentional,
+            and entirely yours. We curate pieces that move with your life: from morning errands to late evenings
+            out, from quiet weekends to bold statements.
+        </p>
+        <p class="about-body">
+            Every item we carry is chosen with care — for its quality, its versatility, and the confidence it gives
+            the person wearing it. We're not just a store. We're a wardrobe built around who you already are.
+        </p>
+        <a href="shop.html" class="about-cta">Explore the Collection</a>
+    </div>
+</section>
+
+<!-- NEWSLETTER SECTION -->
+<section class="newsletter-section">
+    <div class="newsletter-inner">
+        <p class="newsletter-eyebrow">Join the Liyah Family</p>
+        <h2 class="newsletter-title">Get 10% Off Your First Order</h2>
+        <p class="newsletter-sub">Subscribe for early access to new arrivals, exclusive deals, and style inspiration.</p>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="handleSubscribe(event)">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required id="email-input" />
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+        <p class="newsletter-note">No spam, ever. Unsubscribe anytime.</p>
+        <p class="newsletter-success" id="newsletter-success">You're in! Check your inbox for your 10% off code.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-brand">LIYAH STORE</div>
+        <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <p>&copy; 2026 Liyah Store. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu
+    document.getElementById("mobile-menu").addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.toggle("active");
+    });
+
+    // Newsletter
+    function handleSubscribe(e) {
+        e.preventDefault();
+        document.getElementById("newsletter-form").style.display = "none";
+        document.getElementById("newsletter-success").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

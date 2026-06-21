@@ -1,0 +1,169 @@
+ 
+        .checkout-page {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .checkout-form-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .checkout-form-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #000;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .place-order-btn {
+            width: 100%;
+            padding: 16px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .place-order-btn:hover { background: #333; }
+
+        /* Order Summary Box */
+        .order-summary-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            height: fit-content;
+        }
+
+        .order-summary-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .summary-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .summary-item-info { flex: 1; }
+        .summary-item-name { font-size: 0.9rem; font-weight: 500; }
+        .summary-item-qty  { font-size: 0.8rem; color: #888; margin-top: 2px; }
+        .summary-item-price { font-size: 0.9rem; font-weight: 600; }
+
+        .summary-totals { margin-top: 20px; }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .summary-row.total {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #000;
+            border-top: 1px solid #ddd;
+            padding-top: 12px;
+            margin-top: 12px;
+        }
+
+        /* Success screen */
+        .order-success {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .order-success h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .order-success p { color: #555; margin-bottom: 30px; line-height: 1.6; }
+
+        .order-success a {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .page-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 40px 0 0;
+        }
+        
+        @media (max-width: 700px) {
+            .checkout-page { grid-template-columns: 1fr; }
+        }
+
+   

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Liyah Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css page/index.css">
+    <link rel="stylesheet" href="../css page/checkout.css">
+ 
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">LIYAH STORE</div>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="lookbook.html">Lookbook</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="signup.html">Signup</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+<h1 class="page-title">Checkout</h1>
+
+
+<div id="checkout-content">
+    <div class="checkout-page">
+
+        
+        <div class="checkout-form-box">
+            <h2>Delivery Details</h2>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="fullname" placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phone" placeholder="e.g. 08012345678">
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="checkout-email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label>Delivery Address</label>
+                <textarea id="address" rows="3" placeholder="House number, street name"></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" id="city" placeholder="e.g. Lagos">
+                </div>
+                <div class="form-group">
+                    <label>State</label>
+                    <select id="state">
+                        <option value="">Select state</option>
+                        <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option>
+                        <option>Anambra</option><option>Bauchi</option><option>Bayelsa</option>
+                        <option>Benue</option><option>Borno</option><option>Cross River</option>
+                        <option>Delta</option><option>Ebonyi</option><option>Edo</option>
+                        <option>Ekiti</option><option>Enugu</option><option>FCT - Abuja</option>
+                        <option>Gombe</option><option>Imo</option><option>Jigawa</option>
+                        <option>Kaduna</option><option>Kano</option><option>Katsina</option>
+                        <option>Kebbi</option><option>Kogi</option><option>Kwara</option>
+                        <option>Lagos</option><option>Nasarawa</option><option>Niger</option>
+                        <option>Ogun</option><option>Ondo</option><option>Osun</option>
+                        <option>Oyo</option><option>Plateau</option><option>Rivers</option>
+                        <option>Sokoto</option><option>Taraba</option><option>Yobe</option>
+                        <option>Zamfara</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Payment Method</label>
+                <select id="payment">
+                    <option value="transfer">Bank Transfer</option>
+                    <option value="card">Pay with Card</option>
+                    <option value="delivery">Pay on Delivery</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Additional Notes (optional)</label>
+                <textarea id="notes" rows="2" placeholder="Any special instructions for delivery?"></textarea>
+            </div>
+
+            <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+        </div>
+
+        <!-- RIGHT: Order Summary -->
+        <div class="order-summary-box">
+            <h2>Order Summary</h2>
+            <div id="summary-items"></div>
+            <div class="summary-totals">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">₦0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <span>₦2,500</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="summary-total">₦0</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- SUCCESS SCREEN (hidden until order placed) -->
+<div id="success-screen" style="display:none;">
+    <div class="order-success">
+        <div style="font-size:4rem;">🎉</div>
+        <h2>Order Placed!</h2>
+        <p>Thank you for shopping with Liyah Store.<br>Your order has been received and will be delivered to you soon.</p>
+        <a href="product.html">Continue Shopping</a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="footer-brand">LIYAH STORE</div>
+    <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Shipping & Returns</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    <p>&copy; 2026 Liyah Store. All rights reserved.</p>
+</footer>
+<script src="../js page/checkout.js"></script>
+
+</body>
+</html>

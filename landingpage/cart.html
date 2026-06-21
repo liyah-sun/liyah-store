@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Liyah Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css page/index.css">
+    <link rel="stylesheet" href="../css page/cart.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <nav class="navbar">
+        <div class="logo">LIYAH STORE</div>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="lookbook.html">Lookbook</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+<!-- CART PAGE -->
+<main class="cart-page">
+    <div class="cart-page-inner">
+        <h1 class="cart-page-title">Your Cart</h1>
+
+        <!-- Empty state -->
+        <div id="cart-empty" style="display:none;">
+            <p class="cart-page-empty">Your cart is empty. <a href="product.html">Continue shopping &rarr;</a></p>
+        </div>
+
+        <!-- Cart items -->
+        <div id="cart-content" style="display:none;">
+            <div class="cart-page-items" id="cart-page-items"></div>
+
+            <div class="cart-page-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">₦0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <span id="summary-delivery">₦2,500</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total</span>
+                    <span id="summary-total">₦0</span>
+                </div>
+                <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+                <a href="product.html" class="continue-shopping">← Continue Shopping</a>
+            </div>
+        </div>
+
+        <!-- Order success message -->
+        <div id="order-success" style="display:none;">
+            <div class="order-success-box">
+                <h2>🎉 Order Placed!</h2>
+                <p>Thank you for shopping with Liyah Store. Your order has been received and will be delivered soon.</p>
+                <a href="product.html" class="checkout-btn">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="footer-brand">LIYAH STORE</div>
+    <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Shipping & Returns</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    <p>&copy; 2026 Liyah Store. All rights reserved.</p>
+</footer>
+
+<script>
+    // Mobile menu
+    document.getElementById("mobile-menu").addEventListener("click", function() {
+        document.getElementById("nav-menu").classList.toggle("active");
+    });
+
+    var DELIVERY = 2500;
+
+    function formatPrice(amount) {
+        return "\u20a6" + amount.toLocaleString();
+    }
+
+    // Load cart from localStorage
+    var cart = JSON.parse(localStorage.getItem("liyahCart") || "[]");
+
+    function renderCart() {
+        var emptyEl   = document.getElementById("cart-empty");
+        var contentEl = document.getElementById("cart-content");
+
+        if (cart.length === 0) {
+            emptyEl.style.display   = "block";
+            contentEl.style.display = "none";
+            return;
+        }
+
+        emptyEl.style.display   = "none";
+        contentEl.style.display = "block";
+
+        var html = "";
+        for (var i = 0; i < cart.length; i++) {
+            var item = cart[i];
+            html += '<div class="cart-page-item">';
+            html += '<img src="' + item.image + '" alt="' + item.name + '">';
+            html += '<div class="cart-page-item-info">';
+            html += '<p class="cart-page-item-name">' + item.name + '</p>';
+            html += '<p class="cart-page-item-price">' + formatPrice(item.price) + '</p>';
+            html += '<div class="cart-page-item-qty">';
+            html += '<button onclick="changeQty(' + item.id + ', -1)">−</button>';
+            html += '<span>' + item.qty + '</span>';
+            html += '<button onclick="changeQty(' + item.id + ', 1)">+</button>';
+            html += '</div>';
+            html += '</div>';
+            html += '<button class="cart-page-item-remove" onclick="removeItem(' + item.id + ')">✕</button>';
+            html += '</div>';
+        }
+        document.getElementById("cart-page-items").innerHTML = html;
+
+        // Calculate totals
+        var subtotal = 0;
+        for (var j = 0; j < cart.length; j++) {
+            subtotal += cart[j].price * cart[j].qty;
+        }
+        document.getElementById("summary-subtotal").textContent = formatPrice(subtotal);
+        document.getElementById("summary-delivery").textContent = formatPrice(DELIVERY);
+        document.getElementById("summary-total").textContent    = formatPrice(subtotal + DELIVERY);
+    }
+
+    function saveCart() {
+        localStorage.setItem("liyahCart", JSON.stringify(cart));
+    }
+
+    function changeQty(id, delta) {
+        for (var i = 0; i < cart.length; i++) {
+            if (cart[i].id === id) {
+                cart[i].qty += delta;
+                if (cart[i].qty <= 0) cart.splice(i, 1);
+                break;
+            }
+        }
+        saveCart();
+        renderCart();
+    }
+
+    function removeItem(id) {
+        for (var i = 0; i < cart.length; i++) {
+            if (cart[i].id === id) { cart.splice(i, 1); break; }
+        }
+        saveCart();
+        renderCart();
+    }
+
+    // Checkout button
+    document.getElementById("checkout-btn").addEventListener("click", function() {
+        var user = localStorage.getItem("loggedInUser");
+        if (!user) {
+            // Not logged in — send to login then come back to checkout
+            localStorage.setItem("returnTo", "checkout.html");
+            window.location.href = "login.html";
+            return;
+        }
+        // Logged in — go to checkout form
+        window.location.href = "checkout.html";
+    });
+
+    renderCart();
+</script>
+
+</body>
+</html>

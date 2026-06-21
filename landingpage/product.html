@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Liyah Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css page/index.css">
+    <link rel="stylesheet" href="../css page/product.css">
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<header>
+    <nav class="navbar">
+        <div class="logo">LIYAH STORE</div>
+
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="lookbook.html">Lookbook</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+
+        <!-- Cart button shows item count -->
+        <button id="cart-btn" class="cart-toggle">
+            Cart 🛒 (<span id="cart-count">0</span>)
+        </button>
+
+        <!-- Hamburger for mobile -->
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+<!-- ===== PAGE TITLE ===== -->
+<div class="shop-hero">
+    <p class="shop-hero-sub">Curated for you</p>
+    <h1 class="shop-hero-title">The Collection</h1>
+</div>
+
+<!-- ===== PRODUCT SECTION ===== -->
+<div class="shop-wrapper">
+
+    <!-- Filter tabs and sort dropdown -->
+    <div class="shop-toolbar">
+        <div class="toolbar-left">
+            <div class="filter-tabs" id="filter-tabs">
+                <button class="filter-tab active" data-cat="all">All</button>
+                <button class="filter-tab" data-cat="tops">Tops</button>
+                <button class="filter-tab" data-cat="bottoms">Bottoms</button>
+                <button class="filter-tab" data-cat="outerwear">Outerwear</button>
+                <button class="filter-tab" data-cat="accessories">Accessories</button>
+            </div>
+        </div>
+        <div class="toolbar-right">
+            <span class="results-count" id="results-count">21 items</span>
+            <select class="sort-select" id="sort-select">
+                <option value="default">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Products are injected here by shop.js -->
+    <div class="product-grid" id="product-grid"></div>
+
+</div>
+
+<!-- ===== CART SIDEBAR ===== -->
+
+<!-- Dark background overlay — clicking it closes the cart -->
+<div id="cart-overlay" class="cart-overlay"></div>
+
+<!-- The cart panel that slides in from the right -->
+<div id="cart-sidebar" class="cart-sidebar">
+
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button id="cart-close" class="cart-close">&#x2715;</button>
+    </div>
+
+    <!-- Cart items are injected here by shop.js -->
+    <div class="cart-items" id="cart-items">
+        <p class="cart-empty">Your cart is empty.</p>
+    </div>
+
+    <!-- Total and checkout — hidden when cart is empty -->
+    <div class="cart-footer" id="cart-footer" style="display:none;">
+        <div class="cart-total">
+            <span>Total</span>
+            <span id="cart-total-price">&#x20a6;0</span>
+        </div>
+        <a href="cart.html" class="checkout-btn">Checkout</a>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="main-footer">
+    <div class="footer-brand">LIYAH STORE</div>
+    <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Shipping & Returns</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    <p>&copy; 2026 Liyah Store. All rights reserved.</p>
+</footer>
+
+<!-- shop.js handles products, filters, cart logic -->
+<script src="../js page/product.js"></script>
+
+</body>
+</html>
