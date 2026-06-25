@@ -1,25 +1,27 @@
 const products = [
-    { id: 1,  name: "Ruched Tube Top",      cat: "tops",        price: 8500,  image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80", badge: "New" },
-    { id: 2,  name: "Rhinestone Hoodie Set", cat: "tops",        price: 24000, originalPrice: 28000, image: "https://images.unsplash.com/photo-1556821840-3a63f15732ce?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
-    { id: 3,  name: "Floral Corset Blouse",  cat: "tops",        price: 12500, image: "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?auto=format&fit=crop&w=600&q=80", badge: "New" },
-    { id: 4,  name: "Linen Stripe Shirt",    cat: "tops",        price: 9800,  image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=600&q=80" },
-    { id: 5,  name: "Crop Ribbed Tank",      cat: "tops",        price: 5500,  image: "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?auto=format&fit=crop&w=600&q=80" },
-    { id: 6,  name: "Wide Leg Denim",        cat: "bottoms",     price: 18500, image: "https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=600&q=80", badge: "New" },
-    { id: 7,  name: "High Waist Trousers",   cat: "bottoms",     price: 14000, image: "https://images.unsplash.com/photo-1594938298603-c8148c4b4d9a?auto=format&fit=crop&w=600&q=80" },
-    { id: 8,  name: "Pleated Mini Skirt",    cat: "bottoms",     price: 10500, originalPrice: 13000, image: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
-    { id: 9,  name: "Cargo Joggers",         cat: "bottoms",     price: 13000, image: "https://i.pinimg.com/736x/87/94/87/879487791bf001f6b2f7c462c536d157.jpg" },
-    { id: 10, name: "Varsity Jacket",        cat: "outerwear",   price: 32000, image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&q=80", badge: "New" },
-    { id: 11, name: "Oversized Blazer",      cat: "outerwear",   price: 27500, image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" },
-    { id: 12, name: "Leather Moto Jacket",   cat: "outerwear",   price: 45000, originalPrice: 52000, image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
-    { id: 13, name: "Trench Coat",           cat: "outerwear",   price: 38000, image: "https://images.unsplash.com/photo-1548624313-0396c75a8b6e?auto=format&fit=crop&w=600&q=80" },
-    { id: 14, name: "Star Chain Necklace",   cat: "accessories", price: 4500,  image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80", badge: "New" },
-    { id: 15, name: "Layered Pendant Set",   cat: "accessories", price: 6000,  image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80" },
-    { id: 16, name: "Mini Shoulder Bag",     cat: "accessories", price: 16500, image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80", badge: "New" },
-    { id: 17, name: "Tortoise Sunglasses",   cat: "accessories", price: 7800,  originalPrice: 9500, image: "https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
-    { id: 18, name: "Wide Brim Hat",         cat: "accessories", price: 8200,  image: "https://images.unsplash.com/photo-1572307480813-ceb0e59d8325?auto=format&fit=crop&w=600&q=80" },
-    { id: 19, name: "Hair Bow",              cat: "accessories", price: 3000,  image: "https://i.pinimg.com/1200x/ca/9c/5e/ca9c5e9ad4671304cf7c85f209b6f70f.jpg" },
-    { id: 20, name: "Hair Band",             cat: "accessories", price: 5000,  image: "https://i.pinimg.com/1200x/eb/61/ad/eb61adee482ca0feb01f1e4a91203eac.jpg" },
-    { id: 21, name: "Hair Clips",            cat: "accessories", price: 3000,  image: "https://i.pinimg.com/1200x/5e/c5/d6/5ec5d6484bd8bcc4f0fcd3dd2d30cc47.jpg" },
+    { id: 1, name: "Ruched Tube Top", cat: "tops", price: 8500, image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80", badge: "New" },
+    { id: 2, name: "Rhinestone Hoodie Set", cat: "tops", price: 24000, originalPrice: 28000, image: "https://images.unsplash.com/photo-1556821840-3a63f15732ce?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
+    { id: 3, name: "Floral Corset Blouse", cat: "tops", price: 12500, image: "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?auto=format&fit=crop&w=600&q=80", badge: "New" },
+     { id: 4, name: "Tank top", cat: "tops", price: 9000, image: "https://i.pinimg.com/1200x/6d/44/58/6d4458690a838d46be90c0df1961470b.jpg" },
+    { id: 5, name: "Linen Stripe Shirt", cat: "tops", price: 9800, image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=600&q=80" },
+    { id: 6, name: "Crop Ribbed Tank", cat: "tops", price: 5500, image: "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?auto=format&fit=crop&w=600&q=80" },
+    { id: 7, name: "Wide Leg Denim", cat: "bottoms", price: 18500, image: "https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=600&q=80", badge: "New" },
+    { id: 8, name: "High Waist Trousers", cat: "bottoms", price: 14000, image: "https://images.unsplash.com/photo-1594938298603-c8148c4b4d9a?auto=format&fit=crop&w=600&q=80" },
+    { id: 9, name: "Pleated Mini Skirt", cat: "bottoms", price: 10500, originalPrice: 13000, image: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
+    { id: 10, name: "Cargo Joggers", cat: "bottoms", price: 13000, image: "https://i.pinimg.com/736x/87/94/87/879487791bf001f6b2f7c462c536d157.jpg" },
+    { id: 11, name: "Varsity Jacket", cat: "outerwear", price: 32000, image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&q=80", badge: "New" },
+    { id: 12, name: "Oversized Blazer", cat: "outerwear", price: 27500, image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" },
+    { id: 13, name: "Leather Moto Jacket", cat: "outerwear", price: 45000, originalPrice: 52000, image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
+    { id: 14, name: "Trench Coat", cat: "outerwear", price: 38000, image: "https://images.unsplash.com/photo-1548624313-0396c75a8b6e?auto=format&fit=crop&w=600&q=80" },
+    { id: 15, name: "Star Chain Necklace", cat: "accessories", price: 4500, image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80", badge: "New" },
+    { id: 16, name: "Layered Pendant Set", cat: "accessories", price: 6000, image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80" },
+    { id: 17, name: "Mini Shoulder Bag", cat: "accessories", price: 16500, image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80", badge: "New" },
+    { id: 18, name: "Tortoise Sunglasses", cat: "accessories", price: 7800, originalPrice: 9500, image: "https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=600&q=80", badge: "Sale" },
+    { id: 19, name: "Wide Brim Hat", cat: "accessories", price: 8200, image: "https://images.unsplash.com/photo-1572307480813-ceb0e59d8325?auto=format&fit=crop&w=600&q=80" },
+    { id: 20, name: "Hair Bow", cat: "accessories", price: 3000, image: "https://i.pinimg.com/1200x/ca/9c/5e/ca9c5e9ad4671304cf7c85f209b6f70f.jpg" },
+    { id: 21, name: "Hair Band", cat: "accessories", price: 5000, image: "https://i.pinimg.com/1200x/eb/61/ad/eb61adee482ca0feb01f1e4a91203eac.jpg" },
+    { id: 22, name: "Hair Clips", cat: "accessories", price: 3000, image: "https://i.pinimg.com/1200x/5e/c5/d6/5ec5d6484bd8bcc4f0fcd3dd2d30cc47.jpg" },
+   
 ]
 
 let cart = JSON.parse(localStorage.getItem("cart")) || []
@@ -194,3 +196,11 @@ document.getElementById("mobile-menu").addEventListener("click", () => {
 displayProducts(getFiltered())
 updateCartCount()
 renderCart()
+// console.log(localStorage.getItem("liyahCart"))
+// localStorage.setItem("test", "hello")
+// console.log(localStorage.getItem("test"))
+console.log(typeof addToCart)
+console.log(localStorage.getItem("liyahCart"))
+
+addToCart(1)
+console.log(cart)

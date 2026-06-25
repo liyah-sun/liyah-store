@@ -29,3 +29,6 @@
 .cart-page-empty a:hover {
     text-decoration: underline;
 }
+.checkout-btn{
+    background-color: whitesmoke;
+}
