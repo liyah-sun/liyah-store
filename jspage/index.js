@@ -1,6 +1,4 @@
-// // =========================
-// // ALL PRODUCTS
-// // =========================
+
 
 var products = [
     { id: 1,  name: "Ruched Tube Top",      cat: "tops",        price: 8500,  image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80", badge: "New" },
@@ -27,9 +25,6 @@ var products = [
 ];
 
 
-// =========================
-// CART (saved in browser)
-// =========================
 
 var cart = JSON.parse(localStorage.getItem("liyahCart") || "[]");
 
@@ -38,16 +33,14 @@ function saveCart() {
 }
 
 
-// =========================
-// DISPLAY PRODUCTS
-// =========================
+
 
 var currentCat  = "all";
 var currentSort = "default";
 
 function showProducts() {
 
-    // Filter by category
+  
     var list = [];
     for (var i = 0; i < products.length; i++) {
         if (currentCat === "all" || products[i].cat === currentCat) {

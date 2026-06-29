@@ -24,7 +24,7 @@ const products = [
    
 ]
 
-let cart = JSON.parse(localStorage.getItem("cart")) || []
+let cart = JSON.parse(localStorage.getItem("liyahCart")) || []
 let wishlist = new Set(JSON.parse(localStorage.getItem("wishlist")) || [])
 let currentCat = "all"
 let currentSort = "default"
@@ -50,9 +50,6 @@ function displayProducts(list) {
                 <div class="product-card__image-wrap">
                     <img src="${product.image}" alt="${product.name}" loading="lazy">
                     ${product.badge ? `<span class="product-card__badge">${product.badge}</span>` : ""}
-                    <button class="product-card__wish ${wishlist.has(product.id) ? "wished" : ""}" onclick="toggleWish(event, ${product.id})">
-                        ${wishlist.has(product.id) ? "♥" : "♡"}
-                    </button>
                     <button class="product-card__add" onclick="addToCart(${product.id})">Add to Cart</button>
                 </div>
                 <p class="product-card__cat">${product.cat}</p>
@@ -95,7 +92,7 @@ function addToCart(id) {
         cart.push({ ...selectedProduct, qty: 1 })
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart))
+    localStorage.setItem("liyahCart", JSON.stringify(cart))
     updateCartCount()
     renderCart()
     openCart()
@@ -106,14 +103,14 @@ function changeQty(id, delta) {
     if (!item) return
     item.qty += delta
     if (item.qty <= 0) cart = cart.filter(i => i.id !== id)
-    localStorage.setItem("cart", JSON.stringify(cart))
+    localStorage.setItem("liyahCart", JSON.stringify(cart))
     updateCartCount()
     renderCart()
 }
 
 function removeFromCart(id) {
     cart = cart.filter(i => i.id !== id)
-    localStorage.setItem("cart", JSON.stringify(cart))
+    localStorage.setItem("liyahCart", JSON.stringify(cart))
     updateCartCount()
     renderCart()
 }
@@ -196,11 +193,3 @@ document.getElementById("mobile-menu").addEventListener("click", () => {
 displayProducts(getFiltered())
 updateCartCount()
 renderCart()
-// console.log(localStorage.getItem("liyahCart"))
-// localStorage.setItem("test", "hello")
-// console.log(localStorage.getItem("test"))
-console.log(typeof addToCart)
-console.log(localStorage.getItem("liyahCart"))
-
-addToCart(1)
-console.log(cart)
